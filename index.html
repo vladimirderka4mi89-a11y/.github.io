@@ -543,5 +543,20 @@ Audio: Scene 1 — quiet room tone, faint Edison bulb hum, soft warmth in tone a
 </div>
 
 </div><!-- /article -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.img-frame, .prompt-slot, .card-item, .tool').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+});
+</script>
+
 </body>
 </html>
