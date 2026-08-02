@@ -1,13 +1,13 @@
  :root {
         --primary-blue: #1428D6;
-        --dark-blue: #0A1747;
+        --dark-blue: #0F2094;
         --accent-lime: #D6E600;
         --bg: #F5F6FA;
         --surface: #FFFFFF;
         --text: #1A1A2E;
         --muted: #6B7089;
         --border: #E2E5F0;
-        --code-bg: #0A1747;
+        --code-bg: #0F2094;
         --code-text: #E8ECFF;
     }
     * { box-sizing: border-box; }
