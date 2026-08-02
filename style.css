@@ -1,1 +1,136 @@
+:root {
+    --primary-blue: #1428D6;
+    --dark-blue: #0A1747;
+    --accent-lime: #D6E600;
+    --bg: #F5F6FA;
+    --surface: #FFFFFF;
+    --text: #1A1A2E;
+    --muted: #6B7089;
+    --border: #E2E5F0;
+    --code-bg: #0A1747;
+    --code-text: #E8ECFF;
+}
 
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.75;
+}
+
+.article { max-width: 980px; margin: 0 auto; padding: 0 24px 100px; }
+
+/* ===== Шапка статьи ===== */
+.article-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    color: #fff; padding: 64px 40px; margin: 0 -24px 56px;
+    text-align: center; position: relative; overflow: hidden;
+}
+.article-header::before {
+    content: ""; position: absolute; top: -60px; right: -60px;
+    width: 220px; height: 220px; background: var(--accent-lime);
+    opacity: 0.15; border-radius: 50%;
+}
+.article-header::after {
+    content: ""; position: absolute; bottom: -60px; left: -60px;
+    width: 220px; height: 220px; background: var(--accent-lime);
+    opacity: 0.15; border-radius: 50%;
+}
+.article-header h1 { font-size: 38px; line-height: 1.3; margin-bottom: 16px; position: relative; z-index: 2; }
+.article-header p { color: #D8DEFF; font-size: 17px; max-width: 700px; margin: 0 auto; position: relative; z-index: 2; }
+.article-header .underline {
+    width: 60px; height: 3px; background: var(--accent-lime);
+    margin: 24px auto 0; border-radius: 2px; position: relative; z-index: 2;
+}
+
+/* ===== Логотип-метка (используется в шапке и в финальном блоке) ===== */
+.logo-mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px; margin-bottom: 20px; position: relative; z-index: 2;
+}
+.logo-mark .spark {
+    color: var(--accent-lime); font-size: 28px;
+    display: inline-block; animation: pulse 1.6s ease-in-out infinite;
+}
+.logo-mark span.brand { font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* ===== Заголовки и текст ===== */
+h2 {
+    margin-top: 64px; padding: 14px 20px; background: var(--dark-blue);
+    color: #fff; border-radius: 8px; font-size: 26px;
+    display: flex; align-items: center; gap: 10px;
+}
+h2::before { content: ""; width: 10px; height: 10px; background: var(--accent-lime); border-radius: 50%; flex-shrink: 0; }
+h3 { margin-top: 36px; font-size: 21px; color: var(--primary-blue); }
+h4 { margin-top: 24px; font-size: 17px; color: var(--muted); }
+p { margin: 18px 0; }
+ul, ol { padding-left: 26px; }
+li { margin: 8px 0; }
+strong { color: var(--dark-blue); }
+
+/* ===== Блок инструментов ===== */
+.tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 28px 0; }
+.tool {
+    padding: 18px; background: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--primary-blue); border-radius: 8px; transition: transform 0.15s ease;
+}
+.tool:hover { transform: translateY(-2px); border-left-color: var(--accent-lime); }
+.tool strong { display: block; margin-bottom: 6px; font-size: 16px; color: var(--dark-blue); }
+.tool span { color: var(--muted); font-size: 14px; }
+
+/* ===== Изображения ===== */
+figure.img-frame {
+    margin: 28px 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border); background: var(--surface);
+    box-shadow: 0 4px 16px rgba(20,40,214,0.06);
+}
+.img-frame img {
+    width: 100%; max-height: 560px; object-fit: cover; display: block; background: #EEF0FA;
+}
+.img-frame figcaption {
+    padding: 12px 18px; font-size: 14px; color: var(--muted);
+    border-top: 1px solid var(--border); background: #FAFBFF;
+}
+
+/* Плейсхолдер-заглушка — оставлена на случай, если картинки для какого-то
+   блока пока нет. Просто добавь класс "ph" к img, у которого ещё нет src */
+.img-frame img.ph {
+    display: block; min-height: 220px;
+    background: repeating-linear-gradient(45deg, #EEF0FA, #EEF0FA 10px, #E4E7F7 10px, #E4E7F7 20px);
+}
+
+.img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .img-row { grid-template-columns: 1fr; } }
+
+/* ===== Промты / код ===== */
+pre {
+    overflow-x: auto; padding: 22px; border-radius: 10px; background: var(--code-bg);
+    color: var(--code-text); font-size: 13.5px; line-height: 1.6;
+    white-space: pre-wrap; margin: 20px 0; border-left: 4px solid var(--accent-lime);
+}
+code { font-family: "Consolas", "Courier New", monospace; }
+
+blockquote {
+    margin: 26px 0; padding: 16px 20px; border-left: 4px solid var(--accent-lime);
+    background: #F0F5FF; color: var(--dark-blue); border-radius: 0 8px 8px 0; font-style: italic;
+}
+
+/* ===== Пронумерованные шаги ===== */
+.step-list { counter-reset: step; list-style: none; padding-left: 0; }
+.step-list li { counter-increment: step; position: relative; padding-left: 44px; margin: 16px 0; }
+.step-list li::before {
+    content: counter(step); position: absolute; left: 0; top: 0;
+    width: 30px; height: 30px; background: var(--primary-blue); color: #fff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: bold;
+}
+
+/* ===== Бейдж акта ===== */
+.act-badge {
+    display: inline-block; padding: 6px 16px; background: var(--accent-lime);
+    color
