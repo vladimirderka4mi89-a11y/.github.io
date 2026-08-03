@@ -558,5 +558,15 @@ document.querySelectorAll('.img-frame, .prompt-slot, .card-item, .tool').forEach
 });
 </script>
 
+	<script>
+// Автоматически оборачиваем <img> внутри .img-frame в .img-wrap
+document.querySelectorAll('figure.img-frame > img').forEach(img => {
+    const wrap = document.createElement('div');
+    wrap.className = 'img-wrap';
+    img.parentNode.insertBefore(wrap, img);
+    wrap.appendChild(img);
+});
+</script>
+
 </body>
 </html>
