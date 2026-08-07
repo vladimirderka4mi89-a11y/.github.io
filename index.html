@@ -12,14 +12,14 @@
 
   <!-- ======== ШАПКА ======== -->
   <header class="article-header">
-  <div class="logo-mark">
-    <span class="spark">✦</span>
-    <span class="brand">giper.ai</span>
-  </div>
-  <h1>Как я снял рекламный ролик с&nbsp;помощью нейросетей: погоня в&nbsp;стиле GTA и&nbsp;кофемашина KRUPS</h1>
-  <p>Полный разбор производственного процесса: от спонтанной идеи до финальной заставки — без съёмочной группы, актёров и огромного бюджета на продакшн</p>
-  <div class="underline"></div>
-</header>
+    <div class="logo-mark">
+      <span class="spark">✦</span>
+      <span class="brand">giper.ai</span>
+    </div>
+    <h1>Как я снял рекламный ролик с&nbsp;помощью нейросетей: погоня в&nbsp;стиле GTA и&nbsp;кофемашина KRUPS</h1>
+    <p>Полный разбор производственного процесса: от спонтанной идеи до финальной заставки — без съёмочной группы, актёров и огромного бюджета на продакшн</p>
+    <div class="underline"></div>
+  </header>
 
   <!-- ======== ИНСТРУМЕНТЫ ======== -->
   <section>
@@ -202,4 +202,394 @@ Cinematic photorealism; character concept art presentation; sharp focus across a
     </div>
 
     <h3>Структура промта для Seedance</h3>
-    <p>Промты для 
+    <p>Промты для <span class="ai-tag">Seedance</span> формирует <span class="ai-tag">Claude</span>. Ключевой принцип: промт разбивается на <strong>временны́е таймлайны</strong>, внутри каждого из&nbsp;которых через тег <strong><code>@</code></strong> указывается нужная карточка-изображение.</p>
+
+    <!-- ======== АКТ 1 ======== -->
+    <div class="act-badge">ДЕЙСТВИЕ 1 — Ограбление и погоня</div>
+
+    <p>Первый акт разворачивается в&nbsp;ночном городе в&nbsp;стиле GTA: герой вскрывает сейф, похищает кофемашину, уходит от&nbsp;полиции на&nbsp;стилизованном кей-каре — и&nbsp;в&nbsp;итоге получает ракетой от&nbsp;злодея с&nbsp;моста. Финал — классический экран с проваленной миссией <em>«WASTED»</em>.</p>
+
+    <!-- ПРОМТ 2: промт для Акта 1 (погоня) -->
+    <div class="prompt-slot">
+      <div class="prompt-label">Промт · Акт I — Ограбление и погоня · Seedance 2.0</div>
+      <div class="prompt">
+      <pre>[00:00 - 00:02] Close-up, 35mm, low angle, static — (@ изображение кофемашины), bearded, tropical blue palm-print shirt, silver necklace, spins a vault dial at night, door groans open under cold blue security light, no daylight.
+
+[00:02 - 00:04] Medium, 50mm, eye-level, handheld — (@ изображение кофемашины) off the shelf, tucks it under one arm, smirks over his shoulder, dim interior night lighting.
+
+[00:04 - 00:06] Wide, 24mm, high angle, tracking — (@ изображение главного героя ) sprints across the marble lobby at night, alarm strobes red against dark windows, white sneakers pounding tile.
+
+[00:06 - 00:08] Medium, 35mm, low angle, pan — (@ изображение кофемашины) dives into (@ изображение автомобиля), the stanced teal kei van, engine revs, gold BBS wheels spin on wet night asphalt lit by streetlamps.
+
+[00:08 - 00:10] Wide, 28mm, over-the-shoulder, track — (@ изображение автомобиля) weaves down a dark street, LED strips glowing, police lights flashing behind, city skyline lit against black night sky.
+
+[00:10 - 00:12] Close-up, 85mm, Dutch angle, static — (@ изображение злодея), tan linen shirt, tattooed forearm, shoulders the RPG on a night overpass under a dark sky, face lit only by orange muzzle flash and distant streetlights, fires.
+
+[00:12 - 00:15] Wide, 24mm, low angle, push in — rocket slams into (@ изображение автомобиля) in the night street, fireball erupts against black sky, debris flying, red "WASTED" text burns across the frame GTA-style.
+
+Location: Downtown bank and city streets, night.
+Style: Cool shadows, natural skin tones. IMAX-scale composition, deep focus, practical lighting. High contrast, grounded realism. In the style of a Christopher Nolan movie.
+Audio: Diegetic sound only — natural ambience, environmental foley, and subject-driven sound.</pre>
+      </div>
+    </div>
+
+    <!-- ФОТО 10: кадр из готового видео — сцена ограбления/погони -->
+    <figure class="img-frame">
+      <img src="images/09-heist-scene.png" alt="Кадр из ролика: сцена ограбления в стиле GTA">
+      <figcaption>Кадр из готового видео: сцена ограбления и погони</figcaption>
+    </figure>
+
+    <div class="note">
+      <strong>Совет:</strong> Если результат не&nbsp;устраивает — не&nbsp;нужно начинать с&nbsp;нуля. Опишите Claude, что конкретно пошло не&nbsp;так, попросите доработать промт и&nbsp;сделайте повторную генерацию. Уже двух вариантов достаточно для монтажа: нарезайте лучшие фрагменты и&nbsp;выстраивайте сцену по&nbsp;смыслу.
+    </div>
+
+    <!-- ======== АКТ 2: ЗЛОДЕЙ ======== -->
+    <div class="act-badge">ДЕЙСТВИЕ 2 — Злодей</div>
+
+    <p>Появилась идея сделать антагониста узнаваемым — с реальным лицом коллеги, который согласился помочь. Для него создали карточку персонажа, но в наличии было только одно фото, а не набор ракурсов, как обычно требуется для качественной проработки.<br><br>
+
+    Из-за нехватки референсов <span class="ai-tag">Nano Banana 2</span> уже изначально создала искажённую карточку персонажа — черты лица уже на этом этапе передавались неточно. Вследствие этого искажения перешли и в готовый ролик: там, где ракурс был близок к исходному фото, сходство ещё сохранялось, но при повороте головы или смене мимики неточности карточки проявлялись ещё сильнее.</p>
+
+    <!-- ФОТО 11: карточка злодея крупно -->
+    <figure class="img-frame">
+      <img src="images/10-villain-card.png" alt="Карточка персонажа злодея">
+      <figcaption>Карточка персонажа злодея, созданная в Nano Banana 2</figcaption>
+    </figure>
+
+    <!-- ПРОМТ 3: промт для Акта 2 (злодей) -->
+    <div class="prompt-slot">
+      <div class="prompt-label">Промт №3: Злодей на мосту (для Seedance)</div>
+      <div class="prompt">
+      <pre>[00:00 - 00:02] Wide, 28mm, eye-level, static — (@ изображение злодея), Asian male, green button shirt, white tee underneath, black cargo pants, tattooed forearms, beaded bracelet, Nike sneakers, stands on a dark night overpass, leans casually against concrete barrier facing camera at three-quarter front angle, watches the street below, city glow and distant streetlamps as only light source, no daylight, face visible front-facing.
+
+[00:02 - 00:04] Medium, 50mm, slight low angle, slow push in — (@ изображение злодея) face three-quarter front toward camera, spots (@ изображение автомобиля) the stanced teal kei van speeding down the wet night street below, a slow cold smile spreads across his face, eyes narrowing directly forward, overpass shadow framing him, practical streetlight raking across his front-facing features, no side profile.
+
+[00:04 - 00:06] Wide, 24mm, high angle from overpass looking down — (@ изображение автомобиля) teal kei van and two police cruisers with flashing lights pass directly below at speed, wet asphalt reflecting blue-red strobes, exhaust trail visible, (@ изображение злодея) seen from above in upper frame, body facing downward toward street, back to camera, patient, waiting, no face visible this shot.
+
+[00:06 - 00:08] Medium, 35mm, frontal low angle, handheld — (@ изображение злодея) faces camera at three-quarter front, smoothly lifts the RPG-7 with both tattooed hands, wooden grip and green warhead clearly visible pointing away from camera over his shoulder, beaded bracelet catching streetlight, jaw set, composed, no urgency, face fully readable.
+
+[00:08 - 00:10] Close-up, 85mm, slight low angle, static — (@ изображение злодея) face three-quarter front toward camera, RPG-7 tube raised forward away from camera, both eyes open and locked downward on target below, orange and amber streetlight falling directly on his front-facing features, green shirt collar catching the light, tattooed hand steady on trigger, breath slow, face fully visible not in profile.
+
+[00:10 - 00:13] Medium, 50mm, frontal angle, rack focus — (@ изображение злодея) faces camera three-quarter front, finger squeezes the trigger — RPG fires with a violent orange-white back-blast muzzle flash erupting behind him over his shoulder, rocket-propelled grenade launches forward visibly streaking as a glowing projectile with white smoke trail cutting through dark night air at high speed toward the street below, the launcher recoils, his body absorbs the kick, explosion flash lights his front-facing face dramatically.
+
+[00:13 - 00:15] Wide, 24mm, low angle, push in — rocket streaks in from upper frame and slams into (@ изображение злодея) the teal kei van on the wet night street, massive fireball erupts against black sky, gold BBS wheels spin off, debris flies, red "WASTED" text burns across the frame GTA-style, police cruisers screech to a halt in background.
+
+Location: Downtown city overpass and street below, night.
+Style: Cool shadows, natural skin tones. IMAX-scale composition, deep focus, practical lighting only — streetlamps, police strobes, muzzle flash. High contrast, grounded realism. In the style of a Christopher Nolan movie.
+Audio: Diegetic sound only — distant police sirens, wet tire screech below, RPG trigger click, violent launch blast and back-pressure whoosh, rocket whistle through air, catastrophic explosion impact, debris rain on asphalt, silence after.</pre>
+      </div>
+    </div>
+
+    <!-- ФОТО 12: кадр из готового видео — злодей на мосту -->
+    <figure class="img-frame">
+      <img src="images/11-villain-scene.png" alt="Кадр из ролика: злодей на ночном мосту с РПГ">
+      <figcaption>Кадр из готового видео: злодей на ночном мосту</figcaption>
+    </figure>
+
+    <!-- ======== АКТ 3: ПРОБУЖДЕНИЕ ======== -->
+    <div class="act-badge">ДЕЙСТВИЕ 3 — Пробуждение в реальном мире</div>
+
+    <p>Второй акт переносит зрителя в&nbsp;реальность: герой просыпается на&nbsp;диване, с&nbsp;ужасом оглядывается, приходит в&nbsp;себя — и&nbsp;идёт на&nbsp;кухню к&nbsp;кофемашине. Здесь важно было подобрать подходящий интерьерный референс.</p>
+
+    <!-- ФОТО 13: референс интерьера лофта -->
+    <figure class="img-frame">
+      <img src="images/12-loft-interior.jpg" alt="Референс интерьера: лофт-квартира с серым диваном и кухней">
+      <figcaption>Референс интерьера: лофт — гостиная и открытая кухня</figcaption>
+    </figure>
+
+    <!-- ПРОМТ 4: промт для Акта 3 (пробуждение) -->
+    <div class="prompt-slot">
+      <div class="prompt-label">Промт №4: Пробуждение главного героя (для Seedance)</div>
+      <div class="prompt">
+      <pre>[00:00 - 00:02] Wide, 24mm, low angle, static — (@ референс кухни-гостиной)
+dark industrial loft living room, early morning blue-grey ambient light,
+concrete walls, warm Edison bulbs dimly glowing, grey sectional sofa,
+wooden coffee table, shaggy rug — (@ главного героя) white male,
+black t-shirt, olive joggers, short dark hair, full beard, lying asleep
+lengthwise on the grey sectional sofa, body fully reclined on his side and back,
+head resting naturally on a cushion, arms relaxed, legs stretched along the sofa,
+peaceful sleeping posture, completely still, healthy natural skin, clear face,
+no bruises, no dark circles, no injuries, no visible marks, no shoes on his feet,
+white sneakers placed on the floor beside the sofa.
+
+[00:02 - 00:04] Medium, 50mm, eye-level, slight handheld —
+(@ главного героя) suddenly wakes up while lying on the sofa,
+gasps sharply, eyes snap open, shoulders jerk upward, one hand presses into
+the cushion as he begins to sit up, chest heaving, disoriented but physically
+uninjured, natural clean skin, no bruises, no dark circles under the eyes,
+dim Edison bulb light from the kitchen catching his face from a frontal
+three-quarter angle, concrete wall behind him.
+
+[00:04 - 00:06] Close-up, 85mm, eye-level, static rack focus —
+(@ главного героя) now sitting on the sofa, face visible from a
+frontal three-quarter angle, breathing hard, eyes darting left and right as
+he scans the room, slowly realizing he is safe, expression shifting from panic
+to confusion and then to exhausted relief, natural healthy complexion,
+clear skin, no bruises, no dark circles, no injuries, dim warm ambient light
+from the Edison bulbs, concrete loft background softly out of focus.
+
+[00:06 - 00:08] Close-up, 85mm, low angle, static —
+(@ главного героя) looks down at his own hands, slowly turns them
+over front and back, checking himself, hands trembling slightly, black t-shirt
+visible, olive jogger waistband visible, natural skin tone, no cuts, no bruises,
+no blood, warm Edison glow raking across his fingers, wooden floor visible
+below frame.
+
+[00:08 - 00:10] Medium, 50mm, eye-level, slow push in —
+(@ главного героя) sitting upright on the grey sofa, face visible
+from a frontal three-quarter angle, exhales long and slowly, jaw unclenches,
+eyes close briefly and then open, he realizes it was only a nightmare,
+expression settles into quiet hollow exhaustion, runs one hand through his
+short dark hair, says nothing, calm and physically unharmed, clear natural skin,
+no bruises or dark circles, industrial loft softly lit around him.
+
+[00:10 - 00:12] Wide, 28mm, eye-level, slow handheld —
+(@ главного героя) places both feet on the shaggy rug and slowly
+stands up from the grey sectional sofa, rolls his shoulders, black t-shirt
+and olive joggers, barefoot, white sneakers left beside the sofa, moves slowly
+toward the kitchen area, passing the wooden coffee table, industrial concrete
+loft space visible, Edison pendant bulbs glowing warm overhead, early morning
+grey light.
+
+[00:12 - 00:14] Medium, 35mm, eye-level, tracking follow —
+camera follows (@ главного героя) from behind as he walks barefoot
+across the wooden floor toward the kitchen counter, dark grey cabinets and
+warm wooden butcher-block countertop visible ahead, concrete walls, Edison
+pendants hanging above, (@ изображение кофемашины) black Krups automatic coffee
+machine sitting on the wooden countertop in the background coming into frame,
+soft under-cabinet warm light glowing.
+
+[00:14 - 00:16] Medium, 50mm, frontal three-quarter angle, static —
+(@ главного героя) arrives at the kitchen counter and stops in front
+of (@ изображение кофемашины) black Krups automatic coffee machine on the warm
+wooden countertop, concrete wall behind him, Edison pendants above, places both
+hands flat on the countertop edge, stares at the machine for a quiet beat,
+face visible from a frontal three-quarter angle, expression hollow and tired
+but calm, natural healthy complexion, no bruises, no dark circles, no injuries,
+the worst is over.
+
+Location: Industrial loft apartment — grey sectional living room and open-plan
+kitchen, early morning.
+
+Style: Cool blue-grey ambient morning light balanced against warm Edison
+practical bulbs. Deep focus, naturalistic grading, high-contrast shadows,
+restrained cinematic character-study aesthetic, intimate handheld energy,
+grounded realism, natural skin texture.
+
+Character continuity: the protagonist remains the same person in every shot,
+with a clean healthy face and natural complexion. No bruises, no black eyes,
+no dark circles, no cuts, no blood, no injuries, no makeup, no sickly appearance.
+
+Audio: Diegetic sound only — sharp gasp on waking, heavy breathing, fabric
+rustle against the sofa, cushion movement, quiet room tone, bare feet on the
+wooden floor, soft apartment hum, subtle footsteps toward the kitchen,
+click of the coffee machine standby light.</pre>
+      </div>
+    </div>
+
+    <!-- ФОТО 14: кадр из готового видео — пробуждение на диване -->
+    <figure class="img-frame">
+      <img src="images/13-waking-scene.png" alt="Кадр из ролика: герой просыпается на диване в лофте">
+      <figcaption>Кадр из готового видео: пробуждение после кошмара</figcaption>
+    </figure>
+
+    <!-- ======== АКТ 4: ФИНАЛЬНАЯ СЦЕНА ======== -->
+    <div class="act-badge">ДЕЙСТВИЕ 4 — Финальная сцена и брендовая заставка KRUPS</div>
+
+    <p>Финал строится следующим образом: герой стоит на&nbsp;кухне с&nbsp;чашкой кофе, смотрит в&nbsp;камеру, едва заметно улыбается и&nbsp;подмигивает — кадр плавно затемняется, после чего появляется брендовый экран с&nbsp;логотипом <strong>KRUPS</strong>.</p>
+
+    <h4>Для этой сцены потребовалось подготовить три элемента:</h4>
+    <ul>
+      <li>Последний кадр героя из&nbsp;предыдущей сцены — с&nbsp;чашкой кофе в&nbsp;руках</li>
+      <li>Изображение фона <strong>без логотипа</strong> — тёмная металлическая текстура</li>
+      <li>Изображение фона <strong>с логотипом</strong> KRUPS</li>
+    </ul>
+
+    <figure class="img-frame" style="margin:0">
+      <img src="images/14-last-frame.png" alt="Последний кадр">
+      <figcaption>Последний кадр из предыдущего ролика</figcaption>
+    </figure>
+
+    <!-- ФОТО 15, 16: фон без логотипа и фон с логотипом (рядом) -->
+    <div class="img-row">
+      <figure class="img-frame" style="margin:0">
+        <img src="images/15-background-no-logo.jpg" alt="Фоновая текстура без логотипа — тёмная бронзово-золотая металлическая поверхность">
+        <figcaption>Фон без логотипа: тёмная металлическая текстура</figcaption>
+      </figure>
+      <figure class="img-frame" style="margin:0">
+        <img src="images/16-background-with-logo.jpg" alt="Брендовый финальный кадр с логотипом KRUPS">
+        <figcaption>Фон с логотипом: финальная брендовая заставка KRUPS</figcaption>
+      </figure>
+    </div>
+
+    <!-- ПРОМТ 5: промт для финальной сцены (подмигивание + заставка KRUPS) -->
+    <div class="prompt-slot">
+      <div class="prompt-label">Промт №5 — Акт 4: Финальная сцена и заставка KRUPS (для Seedance)</div>
+      <div class="prompt">
+      <pre>[00:00 – 00:02] Medium, 50mm, eye-level, static — (@ главного героя) white male, black t-shirt, short dark hair, full beard, standing centered in frame in a dark industrial loft kitchen, holding a white ceramic cup with both hands at chest level, steam rising gently from the cup, looking directly into the camera, expression neutral, warm Edison pendant bulbs glowing overhead, concrete walls, wooden shelves, metal staircase visible in the background right, scene fully lit and stable.
+
+[00:02 – 00:04] Medium, 50mm, eye-level, static — (@ главного героя) same frame continues, the man's expression softens with a very subtle, barely-there smile at the corners of his mouth, then he gives a quick playful wink with one eye while the slight smile remains, gaze still locked on camera, he stays still holding the white ceramic cup, steam still rising faintly, the warm Edison pendant light above begins to dim slowly right after the wink, shadows deepen on the concrete walls behind him, lighting gradually fading, dark vignette closing in from the edges of the frame, the loft kitchen details slowly disappearing into shadow, figure dissolves fully into complete black by end of beat, clean cut to total darkness.
+
+[00:04 – 00:06] Full frame, static — (@ изображение с лейблом) dark brushed metallic bronze-gold texture surface reveals dynamically from pure black, expanding outward from center, fine horizontal brush marks visible across the metal surface, deep black shadows in the corners, a diagonal streak of warm golden light raking across the surface from upper right to lower center, background fully visible by end of beat, rich warm metallic atmosphere, dramatic and premium mood — simultaneously (@ изображение без лейбла) bold white "KRUPS" wordmark begins to appear in the center of the frame, letters assembling one by one from left to right with a sharp cinematic build-up reveal effect, each letter snapping into place with precision, clean white color against the dark metallic background, logo fully assembled and locked by end of beat.
+
+[00:06 – 00:08] Full frame, static — (@ изображение без лейбла) brushed dark bronze-gold metallic texture background fully stable and visible, warm diagonal light streak locked — (@ изображение с лейблом) bold white "KRUPS" wordmark fully visible and held in center — complete branded end card held still, cinematic, premium, dramatic stillness, total duration 8 seconds complete.
+
+Location: Scene 1 — Dark industrial loft kitchen, concrete walls, Edison pendant bulbs, open wooden shelves, metal staircase. Scene 2 — Dark brushed bronze-gold metallic texture background with KRUPS branding.
+
+Style: Scene 1 — warm tungsten Edison practical lighting, man's expression transitioning from neutral to a subtle smile with a playful wink, fading to complete black, shallow depth of field, naturalistic grading, cinematic restraint, total 4 seconds. Scene 2 — dramatic premium product branding reveal, high contrast dark metallic surface, warm diagonal golden light streak, bold typographic assembly effect, commercial cinematic finish, total 4 seconds.
+
+Transition: clean cut from black to metallic background reveal at exactly 00:04.
+
+Total duration: 8 seconds exactly.
+
+Audio: Scene 1 — quiet room tone, faint Edison bulb hum, soft warmth in tone as slight smile and wink appear, silence deepening as light fades, clean cut to black at 00:04. Scene 2 — deep cinematic impact sound as metallic background reveals at 00:04, sharp typographic assembly sound per letter during 00:04–00:06, final held resonant tone as logo completes at 00:06, silence held through 00:08.</pre>
+      </div>
+    </div>
+
+    <!-- ======== АКТ 5: ЗАСТАВКА GIPER.AI ======== -->
+    <div class="act-badge">ДЕЙСТВИЕ 5 — Заставка giper.ai</div>
+
+    <p>Финальный штрих проекта — анимированная заставка с&nbsp;логотипом группы <strong>giper.ai</strong>. Процесс создания состоял из&nbsp;трёх шагов.</p>
+
+    <ol class="step-list">
+      <li>Попросил нейросеть <strong>Suno 5</strong> написать эпический трек для заставки. Модель предложила два варианта — я&nbsp;выбрал тот, что понравился больше.</li>
+      <li>Скопировал логотип из&nbsp;Bitrix24 и&nbsp;передал его в&nbsp;<strong>Nano Banana 2</strong> для подготовки финального изображения под анимацию.</li>
+      <li>Перешёл в <strong>Kling 2.6</strong> (режим Image to Video) и запустил генерацию с промптом для плавного появления логотипа, прикрепив само изображение логотипа.</li>
+    </ol>
+
+    <!-- ФОТО 18: логотип giper.ai, подготовленный в Nano Banana -->
+    <figure class="img-frame">
+      <img src="images/17-giper-logo.jpg" alt="Логотип giper.ai, подготовленный в Nano Banana 2">
+      <figcaption>Логотип giper.ai, подготовленный в&nbsp;Nano Banana 2 для анимации</figcaption>
+    </figure>
+
+    <!-- ПРОМТ 6: промт для заставки giper.ai (Kling 2.6) -->
+    <div class="prompt-slot">
+      <div class="prompt-label">Промт №6 — Заставка giper.ai (для Kling 2.6, режим Image to Video)</div>
+      <div class="prompt">
+      <pre>The scene slowly fades in from white light,
+soft lens flares, gentle particle effects,
+smooth cinematic transition,
+elegant reveal, atmospheric depth,
+professional film quality
+"high quality, cinematic, 4K, smooth animation"</pre>
+      </div>
+    </div>
+
+    <h3>Артефакты нейросети, которые не удалось побороть</h3>
+    <p>Внимательный зритель мог заметить, что в ролике не обошлось без&nbsp;так называемых артефактов — характерных «глюков» генеративных моделей, которые время от времени проскакивают даже в удачных кадрах. С частью из них удалось справиться, доработав промт или перегенерировав сцену, но некоторые оказались на удивление упорными и&nbsp;остались в финальной версии как своеобразный привет от нейросети.</p>
+
+    <div class="card-grid">
+      <div class="card-item">
+        <div class="card-img-slot">
+          <img src="images/18-artifact-foot.jpg" alt="Артефакт: босая нога персонажа">
+        </div>
+        <div class="card-label">Босая нога</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-img-slot">
+          <img src="images/19-artifact-mug.jpg" alt="Артефакт: прозрачная кружка">
+        </div>
+        <div class="card-label">Прозрачная кружка</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-img-slot">
+          <img src="images/20-artifact-rpg.jpg" alt="Артефакт: странный гранатомёт">
+        </div>
+        <div class="card-label">Странный гранатомёт</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ИТОГИ ======== -->
+  <section>
+    <h2>Итоги: производственный пайплайн</h2>
+
+    <p>Весь процесс от&nbsp;идеи до&nbsp;финального монтажа укладывается в&nbsp;следующую цепочку:</p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">💡 Сюжет</div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">🎨 Карточки (Nano Banana 2)</div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">✍️ Промты (Claude)</div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">🎬 Видео (Seedance 2.0)</div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">✨ Заставки (Kling 2.6)</div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">🎵 Музыка (Suno 5)</div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">🎞️ Монтаж</div>
+    </div>
+
+    <h3>Ключевые инсайты проекта</h3>
+
+    <ul>
+      <li><strong>Карточка персонажа — обязательный элемент</strong> при работе с&nbsp;реальным человеком в&nbsp;<span class="ai-tag">Seedance</span>. Без неё нейросеть теряет образ от&nbsp;сцены к&nbsp;сцене.</li>
+      <li><strong>Claude как сценарист промтов</strong> — связка «идея → <span class="ai-tag">Claude</span> → готовый промт с&nbsp;таймлайнами» значительно ускоряет работу и&nbsp;повышает качество результата.</li>
+      <li><strong>Тестирование на&nbsp;низком разрешении</strong> — простой способ сэкономить бюджет и&nbsp;проверить гипотезу перед финальной генерацией.</li>
+      <li><strong>Двух вариантов генерации достаточно для монтажа</strong> — не&nbsp;нужно добиваться идеала в&nbsp;одном рендере. Нарезайте лучшие фрагменты из&nbsp;двух-трёх попыток.</li>
+      <li><strong>Простые промты на&nbsp;русском работают</strong> — для базовых операций в&nbsp;<span class="ai-tag">Nano Banana 2</span> не&nbsp;нужны сложные англоязычные инструкции.</li>
+    </ul>
+
+    <p>Этот ролик доказывает: сегодня небольшая команда или даже один человек, вооружившись нейросетью как мощным инструментом, способен создать полноценный рекламный видеоматериал кинематографического уровня — <strong>без съёмочной группы, без актёров и без традиционного бюджета на продакшн</strong>.<br><br>
+
+    <strong>Важно понимать</strong>: нейросеть здесь — <strong>не автор и не творец</strong>, а <strong>инструмент</strong> в руках специалиста.<br> Именно <strong>человек</strong> формулирует идею, выстраивает драматургию, продумывает визуальную концепцию, отбирает лучшие результаты и собирает из них цельное произведение.<br><br> Технология лишь <strong>ускоряет</strong> и <strong>упрощает</strong> техническую реализацию замысла, беря на себя рутинные и трудоёмкие процессы, которые раньше требовали целых команд специалистов и значительных финансовых вложений.<br><br>
+
+    <strong>Результат — это всегда продукт человеческого таланта, вкуса и профессионального опыта, усиленный современными технологическими возможностями</strong>.</p>
+  </section>
+
+  <div class="finale">
+    <div class="sparks">
+      <span>✦</span>
+      <span>✦</span>
+    </div>
+    <h3>Благодарю за ваше внимание!</h3>
+    <div class="underline"></div>
+  </div>
+
+  <!-- ======== ФИНАЛЬНЫЙ БЛОК ======== -->
+  <div class="final-note">
+    <div class="logo-mark">
+      <span class="spark">✦</span>
+      <span class="brand">giper.ai</span>
+    </div>
+
+    <p style="color:#D8DEFF; margin:0; font-size:16px;">
+      Исследуем возможности нейросетей — и&nbsp;делимся тем, что работает на&nbsp;практике
+    </p>
+    <div class="underline"></div>
+  </div>
+
+</div><!-- /article -->
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.img-frame, .prompt-slot, .card-item, .tool').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+});
+</script>
+
+<script>
+// Автоматически оборачиваем <img> внутри .img-frame в .img-wrap
+document.querySelectorAll('figure.img-frame > img').forEach(img => {
+    const wrap = document.createElement('div');
+    wrap.className = 'img-wrap';
+    img.parentNode.insertBefore(wrap, img);
+    wrap.appendChild(img);
+});
+</script>
+
+</body>
+</html>
