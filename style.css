@@ -462,3 +462,15 @@ figure.img-frame {
     right: -6px;
   }
 }
+.tool-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.35);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.tool-link:hover {
+  color: #E63946;
+  text-decoration-color: #E63946;
+}
