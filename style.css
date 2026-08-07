@@ -474,3 +474,13 @@ figure.img-frame {
   color: #E63946;
   text-decoration-color: #E63946;
 }
+.tool {
+  position: relative;
+}
+
+.tool a.tool-link {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+}
