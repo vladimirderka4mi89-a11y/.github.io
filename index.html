@@ -479,35 +479,34 @@ professional film quality
     <h3>Артефакты нейросети, которые не удалось побороть</h3>
     <p>Внимательный зритель мог заметить, что в ролике не обошлось без&nbsp;так называемых артефактов — характерных «глюков» генеративных моделей, которые время от времени проскакивают даже в удачных кадрах. С частью из них удалось справиться, доработав промт или перегенерировав сцену, но некоторые оказались на удивление упорными и&nbsp;остались в финальной версии как своеобразный привет от нейросети.</p>
 
-    <div class="card-grid">
-      <div class="card-item">
+        <div class="card-grid">
+      <div class="card-item" onclick="openLightbox('images/18-artifact-foot.png', 'Босая нога')">
         <div class="card-img-slot">
           <img src="images/18-artifact-foot.png" alt="Артефакт: босая нога персонажа">
         </div>
         <div class="card-label">Босая нога</div>
       </div>
 
-      <div class="card-item">
+      <div class="card-item" onclick="openLightbox('images/19-artifact-mug.png', 'Прозрачная кружка')">
         <div class="card-img-slot">
           <img src="images/19-artifact-mug.png" alt="Артефакт: прозрачная кружка">
         </div>
         <div class="card-label">Прозрачная кружка</div>
       </div>
 
-      <div class="card-item">
+      <div class="card-item" onclick="openLightbox('images/20-artifact-rpg.png', 'Странный гранатомёт')">
         <div class="card-img-slot">
           <img src="images/20-artifact-rpg.png" alt="Артефакт: странный гранатомёт">
         </div>
         <div class="card-label">Странный гранатомёт</div>
       </div>
 
-      <div class="card-item">
+      <div class="card-item" onclick="openLightbox('images/21-artifact-no_krups.png', 'Не KRUPS')">
         <div class="card-img-slot">
           <img src="images/21-artifact-no_krups.png" alt="Артефакт: не Krups">
         </div>
-          <div class="card-label">Не KRUPS</div>
+        <div class="card-label">Не KRUPS</div>
       </div>
-      
     </div>
   </section>
 
@@ -584,7 +583,15 @@ professional film quality
   </div>
 
 </div><!-- /article -->
-
+<!-- ======== LIGHTBOX (модальное окно для просмотра артефактов) ======== -->
+  <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightboxOutside(event)">
+    <div class="lightbox-box">
+      <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+      <img id="lightboxImg" src="" alt="Просмотр изображения">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+  
 <script>
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -610,5 +617,38 @@ document.querySelectorAll('figure.img-frame > img').forEach(img => {
 });
 </script>
 
+<script>
+function openLightbox(src, caption) {
+  const overlay = document.getElementById('lightboxOverlay');
+  const img = document.getElementById('lightboxImg');
+  const captionEl = document.getElementById('lightboxCaption');
+
+  img.src = src;
+  img.alt = caption;
+  captionEl.textContent = caption;
+
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const overlay = document.getElementById('lightboxOverlay');
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeLightboxOutside(event) {
+  if (event.target.id === 'lightboxOverlay') {
+    closeLightbox();
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
+</script>
+  
 </body>
 </html>
