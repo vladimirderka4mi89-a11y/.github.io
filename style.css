@@ -357,3 +357,108 @@ figure.img-frame {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 12px;
 }
+/* ===== Курсор на карточках артефактов ===== */
+.card-item {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.card-img-slot img {
+  transition: filter 0.25s ease;
+}
+
+.card-item:hover .card-img-slot img {
+  filter: brightness(1.08);
+}
+
+/* ===== Модальное окно (Lightbox) ===== */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 20, 0.88);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-box {
+  position: relative;
+  max-width: min(700px, 90vw);
+  max-height: 85vh;
+  background: #12141c;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transform: scale(0.92);
+  transition: transform 0.25s ease;
+}
+
+.lightbox-overlay.active .lightbox-box {
+  transform: scale(1);
+}
+
+.lightbox-box img {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  text-align: center;
+  color: #D8DEFF;
+  font-size: 15px;
+  margin-top: 12px;
+  opacity: 0.85;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1b1e2a;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: #E63946;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+  .lightbox-close {
+    top: -12px;
+    right: -6px;
+  }
+}
