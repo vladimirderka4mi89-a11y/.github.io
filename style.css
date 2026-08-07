@@ -10,63 +10,175 @@
     --code-bg: #0F2094;
     --code-text: #E8ECFF;
 }
-* { box-sizing: border-box; }
-body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.75;
+
+* {
+    box-sizing: border-box;
 }
-.article { max-width: 980px; margin: 0 auto; padding: 0 24px 100px; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.75;
+}
+
+.article {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+}
 
 /* ===== Заголовок статьи ===== */
 .article-header {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-    color: #fff; padding: 64px 40px; margin: 0 -24px 56px;
-    text-align: center; position: relative; overflow: hidden;
-}
-.article-header::before {
-    content: ""; position: absolute; top: -60px; right: -60px;
-    width: 220px; height: 220px; background: var(--accent-lime);
-    opacity: 0.15; border-radius: 50%;
-}
-.article-header::after {
-    content: ""; position: absolute; bottom: -60px; left: -60px;
-    width: 220px; height: 220px; background: var(--accent-lime);
-    opacity: 0.15; border-radius: 50%;
-}
-.article-header h1 { font-size: 38px; line-height: 1.3; margin-bottom: 16px; position: relative; z-index: 2; }
-.article-header p { color: #D8DEFF; font-size: 17px; max-width: 700px; margin: 0 auto; position: relative; z-index: 2; }
-.article-header .underline {
-    width: 60px; height: 3px; background: var(--accent-lime);
-    margin: 24px auto 0; border-radius: 2px; position: relative; z-index: 2;
+    color: #fff;
+    padding: 64px 40px;
+    margin: 0 -24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.logo-mark { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px; position: relative; z-index: 2; }
-.logo-mark .spark {
-    color: var(--accent-lime); font-size: 28px;
-    display: inline-block; animation: pulse 1.6s ease-in-out infinite;
+.article-header::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    background: var(--accent-lime);
+    opacity: 0.15;
+    border-radius: 50%;
 }
-.logo-mark span.brand { font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+
+.article-header::after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 220px;
+    height: 220px;
+    background: var(--accent-lime);
+    opacity: 0.15;
+    border-radius: 50%;
+}
+
+.article-header h1 {
+    font-size: 38px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.article-header p {
+    color: #D8DEFF;
+    font-size: 17px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.article-header .underline {
+    width: 60px;
+    height: 3px;
+    background: var(--accent-lime);
+    margin: 24px auto 0;
+    border-radius: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-mark .spark {
+    color: var(--accent-lime);
+    font-size: 28px;
+    display: inline-block;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+.logo-mark span.brand {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.7; }
-    50% { transform: scale(1.3); opacity: 1; }
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
 }
 
 /* ===== Заголовки и текст ===== */
 h2 {
-    margin-top: 64px; padding: 14px 20px; background: var(--dark-blue);
-    color: #fff; border-radius: 8px; font-size: 26px;
-    display: flex; align-items: center; gap: 10px;
+    margin-top: 64px;
+    padding: 14px 20px;
+    background: var(--dark-blue);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     transition: transform 0.2s ease;
 }
-h2:hover { transform: translateX(4px); }
-h2::before { content: ""; width: 10px; height: 10px; background: var(--accent-lime); border-radius: 50%; flex-shrink: 0; }
-h3 { margin-top: 36px; font-size: 21px; color: var(--primary-blue); }
-h4 { margin-top: 24px; font-size: 17px; color: var(--muted); }
-p { margin: 18px 0; }
-ul, ol { padding-left: 26px; }
-li { margin: 8px 0; }
-strong { color: var(--dark-blue); }
+
+h2:hover {
+    transform: translateX(4px);
+}
+
+h2::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--accent-lime);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+h3 {
+    margin-top: 36px;
+    font-size: 21px;
+    color: var(--primary-blue);
+}
+
+h4 {
+    margin-top: 24px;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+p {
+    margin: 18px 0;
+}
+
+ul, ol {
+    padding-left: 26px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+strong {
+    color: var(--dark-blue);
+}
 
 /* ===== Блок .tool (карточки инструментов) ===== */
 .tools {
@@ -75,6 +187,7 @@ strong { color: var(--dark-blue); }
     gap: 14px;
     margin: 28px 0;
 }
+
 .tool {
     padding: 18px;
     background: var(--surface);
@@ -84,33 +197,38 @@ strong { color: var(--dark-blue); }
     position: relative;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .tool:hover {
     transform: translateY(-4px);
     border-left-color: var(--accent-lime);
-    box-shadow: 0 10px 24px rgba(20,40,214,0.15);
+    box-shadow: 0 10px 24px rgba(20, 40, 214, 0.15);
 }
+
 .tool strong {
     display: block;
     margin-bottom: 6px;
     font-size: 16px;
     color: var(--dark-blue);
 }
+
 .tool span {
     color: var(--muted);
     font-size: 14px;
 }
+
 .tool-link {
     position: relative;
     z-index: 10;
     color: inherit;
     font-weight: inherit;
     text-decoration: underline;
-    text-decoration-color: rgba(20,40,214,0.35);
+    text-decoration-color: rgba(20, 40, 214, 0.35);
     text-underline-offset: 3px;
     cursor: pointer;
     pointer-events: auto;
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
+
 .tool-link:hover {
     color: #E63946;
     text-decoration-color: #E63946;
@@ -123,13 +241,15 @@ figure.img-frame {
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--surface);
-    box-shadow: 0 4px 16px rgba(20,40,214,0.06);
+    box-shadow: 0 4px 16px rgba(20, 40, 214, 0.06);
 }
+
 .img-frame .img-wrap {
     overflow: hidden;
     display: block;
     line-height: 0;
 }
+
 .img-frame img {
     width: 100%;
     max-height: 560px;
@@ -140,9 +260,11 @@ figure.img-frame {
     will-change: transform;
     cursor: zoom-in;
 }
+
 .img-frame .img-wrap:hover img {
     transform: scale(1.05);
 }
+
 .img-frame figcaption {
     padding: 12px 18px;
     font-size: 14px;
@@ -152,59 +274,130 @@ figure.img-frame {
     position: relative;
     z-index: 2;
 }
+
 .img-frame img.ph {
     display: block;
     min-height: 220px;
     background: repeating-linear-gradient(45deg, #EEF0FA, #EEF0FA 10px, #E4E7F7 10px, #E4E7F7 20px);
 }
 
-.img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 640px) { .img-row { grid-template-columns: 1fr; } }
+.img-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 640px) {
+    .img-row {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* ===== Код и цитаты ===== */
 pre {
-    overflow-x: auto; padding: 22px; border-radius: 10px; background: var(--code-bg);
-    color: var(--code-text); font-size: 13.5px; line-height: 1.6;
-    white-space: pre-wrap; margin: 20px 0; border-left: 4px solid var(--accent-lime);
+    overflow-x: auto;
+    padding: 22px;
+    border-radius: 10px;
+    background: var(--code-bg);
+    color: var(--code-text);
+    font-size: 13.5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    margin: 20px 0;
+    border-left: 4px solid var(--accent-lime);
 }
-code { font-family: "Consolas", "Courier New", monospace; }
+
+code {
+    font-family: "Consolas", "Courier New", monospace;
+}
 
 blockquote {
-    margin: 26px 0; padding: 16px 20px; border-left: 4px solid var(--accent-lime);
-    background: #F0F5FF; color: var(--dark-blue); border-radius: 0 8px 8px 0; font-style: italic;
+    margin: 26px 0;
+    padding: 16px 20px;
+    border-left: 4px solid var(--accent-lime);
+    background: #F0F5FF;
+    color: var(--dark-blue);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
 }
 
 /* ===== Пронумерованный список шагов ===== */
-.step-list { counter-reset: step; list-style: none; padding-left: 0; }
-.step-list li { counter-increment: step; position: relative; padding-left: 44px; margin: 16px 0; }
+.step-list {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+}
+
+.step-list li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 44px;
+    margin: 16px 0;
+}
+
 .step-list li::before {
-    content: counter(step); position: absolute; left: 0; top: 0;
-    width: 30px; height: 30px; background: var(--primary-blue); color: #fff;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 14px; font-weight: bold;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-blue);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* ===== Бейджи и теги ===== */
 .act-badge {
-    display: inline-block; padding: 6px 16px; background: var(--accent-lime);
-    color: var(--dark-blue); border-radius: 20px; font-size: 13px;
-    font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--accent-lime);
+    color: var(--dark-blue);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
 .note {
-    background: #FFF9E0; border: 1px solid #E8DE9C; border-radius: 8px;
-    padding: 14px 18px; margin: 20px 0; font-size: 15px;
+    background: #FFF9E0;
+    border: 1px solid #E8DE9C;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 15px;
 }
-.note strong { color: #8A6D00; }
+
+.note strong {
+    color: #8A6D00;
+}
 
 .ai-tag {
-    display: inline-flex; align-items: center; gap: 6px; background: var(--primary-blue);
-    color: #fff; font-size: 13px; font-weight: 600; padding: 4px 12px;
-    border-radius: 20px; margin: 4px 4px 4px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-blue);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 4px 4px 4px 0;
     transition: background 0.25s ease, transform 0.2s ease;
     cursor: default;
 }
-.ai-tag::before { content: "✦"; color: var(--accent-lime); }
+
+.ai-tag::before {
+    content: "✦";
+    color: var(--accent-lime);
+}
+
 .ai-tag:hover {
     background: var(--dark-blue);
     transform: scale(1.05);
@@ -223,27 +416,49 @@ blockquote {
     border: 1px solid var(--border);
     border-radius: 12px;
 }
+
 .pipeline-step {
-    background: var(--dark-blue); color: #fff;
-    padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 600;
+    background: var(--dark-blue);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
 }
-.pipeline-arrow { color: var(--accent-lime); font-size: 20px; font-weight: 700; }
+
+.pipeline-arrow {
+    color: var(--accent-lime);
+    font-size: 20px;
+    font-weight: 700;
+}
 
 /* ===== Слот для промпта ===== */
 .prompt-slot {
-    border: 2px dashed var(--primary-blue); border-radius: 10px;
-    padding: 20px 24px; margin: 20px 0; background: #F0F5FF;
+    border: 2px dashed var(--primary-blue);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    background: #F0F5FF;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .prompt-slot:hover {
     border-color: var(--accent-lime);
     box-shadow: 0 6px 20px rgba(214, 230, 0, 0.15);
 }
+
 .prompt-slot .prompt-label {
-    font-size: 13px; font-weight: 700; color: var(--primary-blue);
-    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
-    display: flex; align-items: center; gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
 .prompt-slot .prompt-label::before {
     content: "{ }";
     font-family: monospace;
@@ -252,7 +467,12 @@ blockquote {
     padding: 2px 8px;
     border-radius: 4px;
 }
-.prompt-slot .prompt-hint { color: var(--muted); font-size: 14px; font-style: italic; }
+
+.prompt-slot .prompt-hint {
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
+}
 
 /* ===== Карточки артефактов (с зумом и кликом) ===== */
 .card-grid {
@@ -261,6 +481,7 @@ blockquote {
     gap: 14px;
     margin: 24px 0;
 }
+
 .card-item {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -270,17 +491,24 @@ blockquote {
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .card-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
+
 .card-item .card-img-slot {
     overflow: hidden;
     min-height: 140px;
     background: repeating-linear-gradient(45deg, #EEF0FA, #EEF0FA 10px, #E4E7F7 10px, #E4E7F7 20px);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; color: var(--muted); padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 8px;
 }
+
 .card-item .card-img-slot img {
     width: 100%;
     height: 140px;
@@ -288,14 +516,20 @@ blockquote {
     display: block;
     transition: transform 0.4s ease, filter 0.25s ease;
 }
+
 .card-item:hover .card-img-slot img {
     transform: scale(1.05);
     filter: brightness(1.08);
 }
+
 .card-item .card-label {
-    padding: 10px; font-size: 13px; font-weight: 600;
-    color: var(--dark-blue); border-top: 1px solid var(--border);
-    position: relative; z-index: 2;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-blue);
+    border-top: 1px solid var(--border);
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== Анимация появления при скролле ===== */
@@ -304,6 +538,7 @@ blockquote {
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
@@ -320,37 +555,71 @@ blockquote {
     overflow: hidden;
     box-shadow: 0 12px 40px rgba(10, 23, 71, 0.35);
 }
+
 .finale::before {
     content: "";
-    position: absolute; top: -80px; left: -80px;
-    width: 240px; height: 240px;
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 240px;
+    height: 240px;
     background: var(--accent-lime);
-    opacity: 0.12; border-radius: 50%;
+    opacity: 0.12;
+    border-radius: 50%;
 }
+
 .finale::after {
     content: "";
-    position: absolute; bottom: -80px; right: -80px;
-    width: 240px; height: 240px;
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 240px;
+    height: 240px;
     background: var(--accent-lime);
-    opacity: 0.12; border-radius: 50%;
+    opacity: 0.12;
+    border-radius: 50%;
 }
+
 .finale .sparks {
-    display: flex; justify-content: center; gap: 14px;
-    margin-bottom: 18px; position: relative; z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
 }
+
 .finale .sparks span {
-    color: var(--accent-lime); font-size: 24px;
+    color: var(--accent-lime);
+    font-size: 24px;
     animation: pulse 1.6s ease-in-out infinite;
 }
-.finale .sparks span:nth-child(2) { animation-delay: 0.2s; }
-.finale .sparks span:nth-child(3) { animation-delay: 0.4s; }
-.finale h3 {
-    color: #fff; font-size: 30px; margin: 0;
-    position: relative; z-index: 2; letter-spacing: 0.5px;
+
+.finale .sparks span:nth-child(2) {
+    animation-delay: 0.2s;
 }
+
+.finale .sparks span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.finale h3 {
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.5px;
+}
+
 .finale .underline {
-    width: 60px; height: 3px; background: var(--accent-lime);
-    margin: 20px auto 0; border-radius: 2px; position: relative; z-index: 2;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-lime);
+    margin: 20px auto 0;
+    border-radius: 2px;
+    position: relative;
+    z-index: 2;
 }
 
 .final-note {
@@ -364,39 +633,61 @@ blockquote {
     overflow: hidden;
     box-shadow: 0 12px 40px rgba(10, 23, 71, 0.35);
 }
+
 .final-note::before {
     content: "";
-    position: absolute; top: -70px; right: -70px;
-    width: 200px; height: 200px;
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 200px;
+    height: 200px;
     background: var(--accent-lime);
-    opacity: 0.12; border-radius: 50%;
+    opacity: 0.12;
+    border-radius: 50%;
 }
+
 .final-note::after {
     content: "";
-    position: absolute; bottom: -70px; left: -70px;
-    width: 200px; height: 200px;
+    position: absolute;
+    bottom: -70px;
+    left: -70px;
+    width: 200px;
+    height: 200px;
     background: var(--accent-lime);
-    opacity: 0.12; border-radius: 50%;
+    opacity: 0.12;
+    border-radius: 50%;
 }
+
 .final-note .logo-mark {
-    position: relative; z-index: 2;
+    position: relative;
+    z-index: 2;
     margin-bottom: 14px;
 }
+
 .final-note .spark {
     animation: pulse 1.6s ease-in-out infinite;
     display: inline-block;
 }
+
 .final-note strong {
-    position: relative; z-index: 2;
+    position: relative;
+    z-index: 2;
     color: #fff !important;
 }
+
 .final-note p {
-    position: relative; z-index: 2;
+    position: relative;
+    z-index: 2;
 }
+
 .final-note .underline {
-    width: 50px; height: 3px; background: var(--accent-lime);
-    margin: 18px auto 0; border-radius: 2px;
-    position: relative; z-index: 2;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-lime);
+    margin: 18px auto 0;
+    border-radius: 2px;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== Модальное окно (Lightbox) ===== */
@@ -413,25 +704,29 @@ blockquote {
     opacity: 0;
     transition: opacity 0.25s ease;
 }
+
 .lightbox-overlay.active {
     display: flex;
     opacity: 1;
 }
+
 .lightbox-box {
     position: relative;
     max-width: min(700px, 90vw);
     max-height: 85vh;
     background: #12141c;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 14px;
     padding: 16px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
     transform: scale(0.92);
     transition: transform 0.25s ease;
 }
+
 .lightbox-overlay.active .lightbox-box {
     transform: scale(1);
 }
+
 .lightbox-box img {
     display: block;
     max-width: 100%;
@@ -442,6 +737,7 @@ blockquote {
     border-radius: 8px;
     object-fit: contain;
 }
+
 .lightbox-caption {
     text-align: center;
     color: #D8DEFF;
@@ -449,6 +745,7 @@ blockquote {
     margin-top: 12px;
     opacity: 0.85;
 }
+
 .lightbox-close {
     position: absolute;
     top: -14px;
@@ -457,7 +754,7 @@ blockquote {
     height: 36px;
     border-radius: 50%;
     background: #1b1e2a;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #fff;
     font-size: 18px;
     line-height: 1;
@@ -467,10 +764,12 @@ blockquote {
     cursor: pointer;
     transition: background 0.2s ease, transform 0.2s ease;
 }
+
 .lightbox-close:hover {
     background: #E63946;
     transform: rotate(90deg);
 }
+
 @media (max-width: 480px) {
     .lightbox-close {
         top: -12px;
