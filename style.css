@@ -17,6 +17,7 @@ body {
 }
 .article { max-width: 980px; margin: 0 auto; padding: 0 24px 100px; }
 
+/* ===== Заголовок статьи ===== */
 .article-header {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     color: #fff; padding: 64px 40px; margin: 0 -24px 56px;
@@ -51,6 +52,7 @@ body {
     50% { transform: scale(1.3); opacity: 1; }
 }
 
+/* ===== Заголовки и текст ===== */
 h2 {
     margin-top: 64px; padding: 14px 20px; background: var(--dark-blue);
     color: #fff; border-radius: 8px; font-size: 26px;
@@ -66,10 +68,20 @@ ul, ol { padding-left: 26px; }
 li { margin: 8px 0; }
 strong { color: var(--dark-blue); }
 
-.tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 28px 0; }
+/* ===== Блок .tool (карточки инструментов) ===== */
+.tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 28px 0;
+}
 .tool {
-    padding: 18px; background: var(--surface); border: 1px solid var(--border);
-    border-left: 4px solid var(--primary-blue); border-radius: 8px;
+    padding: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: 8px;
+    position: relative;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .tool:hover {
@@ -77,13 +89,40 @@ strong { color: var(--dark-blue); }
     border-left-color: var(--accent-lime);
     box-shadow: 0 10px 24px rgba(20,40,214,0.15);
 }
-.tool strong { display: block; margin-bottom: 6px; font-size: 16px; color: var(--dark-blue); }
-.tool span { color: var(--muted); font-size: 14px; }
+.tool strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: var(--dark-blue);
+}
+.tool span {
+    color: var(--muted);
+    font-size: 14px;
+}
+.tool-link {
+    position: relative;
+    z-index: 10;
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(20,40,214,0.35);
+    text-underline-offset: 3px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+.tool-link:hover {
+    color: #E63946;
+    text-decoration-color: #E63946;
+}
 
-/* ===== Изображения (исправленный зум) ===== */
+/* ===== Изображения (зум при наведении) ===== */
 figure.img-frame {
-    margin: 28px 0; border-radius: 12px; overflow: hidden;
-    border: 1px solid var(--border); background: var(--surface);
+    margin: 28px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
     box-shadow: 0 4px 16px rgba(20,40,214,0.06);
 }
 .img-frame .img-wrap {
@@ -92,7 +131,10 @@ figure.img-frame {
     line-height: 0;
 }
 .img-frame img {
-    width: 100%; max-height: 560px; object-fit: cover; display: block;
+    width: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    display: block;
     background: #EEF0FA;
     transition: transform 0.4s ease;
     will-change: transform;
@@ -102,18 +144,24 @@ figure.img-frame {
     transform: scale(1.05);
 }
 .img-frame figcaption {
-    padding: 12px 18px; font-size: 14px; color: var(--muted);
-    border-top: 1px solid var(--border); background: #FAFBFF;
-    position: relative; z-index: 2;
+    padding: 12px 18px;
+    font-size: 14px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: #FAFBFF;
+    position: relative;
+    z-index: 2;
 }
 .img-frame img.ph {
-    display: block; min-height: 220px;
+    display: block;
+    min-height: 220px;
     background: repeating-linear-gradient(45deg, #EEF0FA, #EEF0FA 10px, #E4E7F7 10px, #E4E7F7 20px);
 }
 
 .img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 640px) { .img-row { grid-template-columns: 1fr; } }
 
+/* ===== Код и цитаты ===== */
 pre {
     overflow-x: auto; padding: 22px; border-radius: 10px; background: var(--code-bg);
     color: var(--code-text); font-size: 13.5px; line-height: 1.6;
@@ -126,6 +174,7 @@ blockquote {
     background: #F0F5FF; color: var(--dark-blue); border-radius: 0 8px 8px 0; font-style: italic;
 }
 
+/* ===== Пронумерованный список шагов ===== */
 .step-list { counter-reset: step; list-style: none; padding-left: 0; }
 .step-list li { counter-increment: step; position: relative; padding-left: 44px; margin: 16px 0; }
 .step-list li::before {
@@ -135,6 +184,7 @@ blockquote {
     font-size: 14px; font-weight: bold;
 }
 
+/* ===== Бейджи и теги ===== */
 .act-badge {
     display: inline-block; padding: 6px 16px; background: var(--accent-lime);
     color: var(--dark-blue); border-radius: 20px; font-size: 13px;
@@ -160,10 +210,17 @@ blockquote {
     transform: scale(1.05);
 }
 
+/* ===== Пайплайн (цепочка шагов) ===== */
 .pipeline {
-    display: flex; flex-wrap: wrap; align-items: center;
-    gap: 8px; margin: 28px 0; padding: 24px;
-    background: var(--surface); border: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 12px;
 }
 .pipeline-step {
@@ -172,6 +229,7 @@ blockquote {
 }
 .pipeline-arrow { color: var(--accent-lime); font-size: 20px; font-weight: 700; }
 
+/* ===== Слот для промпта ===== */
 .prompt-slot {
     border: 2px dashed var(--primary-blue); border-radius: 10px;
     padding: 20px 24px; margin: 20px 0; background: #F0F5FF;
@@ -186,21 +244,35 @@ blockquote {
     text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
     display: flex; align-items: center; gap: 8px;
 }
-.prompt-slot .prompt-label::before { content: "{ }"; font-family: monospace; color: var(--accent-lime); background: var(--dark-blue); padding: 2px 8px; border-radius: 4px; }
+.prompt-slot .prompt-label::before {
+    content: "{ }";
+    font-family: monospace;
+    color: var(--accent-lime);
+    background: var(--dark-blue);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
 .prompt-slot .prompt-hint { color: var(--muted); font-size: 14px; font-style: italic; }
 
-/* ===== Карточки (исправленный зум) ===== */
+/* ===== Карточки артефактов (с зумом и кликом) ===== */
 .card-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px; margin: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin: 24px 0;
 }
 .card-item {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; overflow: hidden; text-align: center;
-    transition: box-shadow 0.3s ease;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .card-item:hover {
-    box-shadow: 0 10px 28px rgba(20,40,214,0.18);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 .card-item .card-img-slot {
     overflow: hidden;
@@ -210,11 +282,15 @@ blockquote {
     font-size: 12px; color: var(--muted); padding: 8px;
 }
 .card-item .card-img-slot img {
-    width: 100%; height: 140px; object-fit: cover; display: block;
-    transition: transform 0.4s ease;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.25s ease;
 }
 .card-item:hover .card-img-slot img {
     transform: scale(1.05);
+    filter: brightness(1.08);
 }
 .card-item .card-label {
     padding: 10px; font-size: 13px; font-weight: 600;
@@ -222,6 +298,7 @@ blockquote {
     position: relative; z-index: 2;
 }
 
+/* ===== Анимация появления при скролле ===== */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -232,6 +309,7 @@ blockquote {
     transform: translateY(0);
 }
 
+/* ===== Финальные блоки ===== */
 .finale {
     margin-top: 90px;
     padding: 50px 40px;
@@ -320,167 +398,82 @@ blockquote {
     margin: 18px auto 0; border-radius: 2px;
     position: relative; z-index: 2;
 }
-figure.img-frame {
-    margin: 28px 0; border-radius: 12px; overflow: hidden;
-    border: 1px solid var(--border); background: var(--surface);
-    box-shadow: 0 4px 16px rgba(20,40,214,0.06);
-}
-
-.img-frame .img-wrap {
-    overflow: hidden;   /* ключевое: обрезка именно тут */
-    display: block;
-    line-height: 0;
-}
-
-.img-frame img {
-    width: 100%; max-height: 560px; object-fit: cover; display: block;
-    background: #EEF0FA;
-    transition: transform 0.4s ease;
-    will-change: transform;
-    cursor: zoom-in;
-}
-
-.img-frame .img-wrap:hover img {
-    transform: scale(1.05);
-}
-
-.img-frame figcaption {
-    padding: 12px 18px; font-size: 14px; color: var(--muted);
-    border-top: 1px solid var(--border); background: #FAFBFF;
-    position: relative;
-    z-index: 2;
-}
-.pipeline {
-    display: flex; flex-wrap: wrap; align-items: center;
-    justify-content: center;
-    gap: 8px; margin: 28px 0; padding: 24px;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px;
-}
-/* ===== Курсор на карточках артефактов ===== */
-.card-item {
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-}
-
-.card-img-slot img {
-  transition: filter 0.25s ease;
-}
-
-.card-item:hover .card-img-slot img {
-  filter: brightness(1.08);
-}
 
 /* ===== Модальное окно (Lightbox) ===== */
 .lightbox-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(8, 10, 20, 0.88);
-  backdrop-filter: blur(6px);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  opacity: 0;
-  transition: opacity 0.25s ease;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 10, 20, 0.88);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
-
 .lightbox-overlay.active {
-  display: flex;
-  opacity: 1;
+    display: flex;
+    opacity: 1;
 }
-
 .lightbox-box {
-  position: relative;
-  max-width: min(700px, 90vw);
-  max-height: 85vh;
-  background: #12141c;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  transform: scale(0.92);
-  transition: transform 0.25s ease;
+    position: relative;
+    max-width: min(700px, 90vw);
+    max-height: 85vh;
+    background: #12141c;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    transform: scale(0.92);
+    transition: transform 0.25s ease;
 }
-
 .lightbox-overlay.active .lightbox-box {
-  transform: scale(1);
+    transform: scale(1);
 }
-
 .lightbox-box img {
-  display: block;
-  max-width: 100%;
-  max-height: 70vh;
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 8px;
-  object-fit: contain;
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    object-fit: contain;
 }
-
 .lightbox-caption {
-  text-align: center;
-  color: #D8DEFF;
-  font-size: 15px;
-  margin-top: 12px;
-  opacity: 0.85;
+    text-align: center;
+    color: #D8DEFF;
+    font-size: 15px;
+    margin-top: 12px;
+    opacity: 0.85;
 }
-
 .lightbox-close {
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #1b1e2a;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 18px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #1b1e2a;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
-
 .lightbox-close:hover {
-  background: #E63946;
-  transform: rotate(90deg);
+    background: #E63946;
+    transform: rotate(90deg);
 }
-
 @media (max-width: 480px) {
-  .lightbox-close {
-    top: -12px;
-    right: -6px;
-  }
-}
-.tool-link {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: rgba(255,255,255,0.35);
-  text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
-}
-
-.tool-link:hover {
-  color: #E63946;
-  text-decoration-color: #E63946;
-}
-.tool {
-  position: relative;
-}
-
-.tool a.tool-link {
-  position: relative;
-  z-index: 10;
-  pointer-events: auto;
-  cursor: pointer;
+    .lightbox-close {
+        top: -12px;
+        right: -6px;
+    }
 }
